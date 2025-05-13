@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Turma Show</title>
+    <link rel="stylesheet" href="home.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a class="logo" href="/">Turma Show //HOME</a>
+        <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+          <div class="line4"></div>
+          <div class="line5"></div>
+        </div>
+        <ul class="nav-list">
+          <li><a href="ingresso.html">ingressos</a></li>
+          <li><a href="projeto.html">Projetos sociais</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+          <li><a href="loja.html">Loja</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="conteudo">
+        <div class="caixa">
+          <h2>Bem-vindo ao Início da Melhor experiência da sua vida</h2>
+          <p>
+            Prepare-se para viver as noites e dias mais inesquecíveis da sua vida.
+            Com música boa, gente animada e uma vibe que vai te contagiar do começo ao fim, nós criamos experiências que ficam gravadas na alma.
+            Aqui, cada festa é uma explosão de sentimentos: luzes que dançam com você, sons que arrepiam a pele e pessoas que vibram na mesma frequência que a sua.
+            Não é só diversão. É conexão. É energia pulsando em cada batida.
+            É o tipo de noite que você não quer que acabe — e que você vai lembrar pra sempre.
+            Se você está buscando emoção de verdade, alegria sem limites e momentos intensos,
+            você acabou de encontrar o lugar certo.
+            Esse é O MOMENTO.
+            E ele está só começando.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Turma Show. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Ambos os scripts no final -->
+    <script src="mobile-navbar.js"></script>
+    <script>
+      let lastScrollTop = 0;
+      const nav = document.querySelector("nav");
+
+      window.addEventListener("scroll", function () {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+          nav.classList.add("hidden");
+        } else {
+          nav.classList.remove("hidden");
+        }
+
+        lastScrollTop = scrollTop;
+      });
+    </script>
+  </body>
+</html>

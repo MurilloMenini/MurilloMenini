@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Turma Show</title>
+    <link rel="stylesheet" href="contato.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a class="logo" href="/">Suporte</a>
+        <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+            <li><a href="Home.html">Home</a></li>
+          <li><a href="ingresso.html">Ingressos</a></li>
+          <li><a href="projeto.html">Projetos sociais</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+          <li><a href="loja.html">Loja</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+        <div class="conteudo">
+          <div class="caixa">
+            <h2>Contatos</h2>
+            <p>Para entrar em contato conosco, você pode usar os seguintes meios:</p>
+            </div>
+            <div class="conteudo">
+                
+              
+                <div class="redes-sociais-wrapper">
+                  <div class="divulgacao">
+                    <ul>
+                      <li>
+                        <a href="https://www.instagram.com/turma.show/">
+                          <i class="fa-brands fa-facebook-f"></i>
+                          <span>Email</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://www.instagram.com/turma.show/">
+                          <i class="fa-brands fa-x-twitter"></i>
+                          <span>Twitter</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://www.instagram.com/turma.show/">
+                          <i class="fa-brands fa-tiktok"></i>
+                          <span>TikTok</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://www.instagram.com/turma.show/">
+                          <i class="fa-brands fa-instagram"></i>
+                          <span>Instagram</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+      </main>
+    <script src="mobile-navbar.js"></script>
+    <script>
+        let lastScrollTop = 0;
+        const nav = document.querySelector("nav");
+      
+        window.addEventListener("scroll", function () {
+          const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      
+          if (scrollTop > lastScrollTop) {
+            // Rolando para baixo
+            nav.classList.add("hidden");
+          } else {
+            // Rolando para cima
+            nav.classList.remove("hidden");
+          }
+      
+          lastScrollTop = scrollTop;
+        });
+      </script>
+      <footer>
+        <p>&copy; 2025 Turma Show. Todos os direitos reservados.</p>
+      </footer>
+      
+  </body>
+</html>

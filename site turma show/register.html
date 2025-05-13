@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registrar-se - Turma Show</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="register.css">
+</head>
+<body>
+  <main class="container">
+    <form id="registerForm">
+      <h1>Registrar-se</h1>
+      <div class="inputbox">
+        <input id="registerEmail" placeholder="Email" type="email" required />
+        <i class="bx bxs-user"></i>
+      </div>
+
+      <div class="inputbox">
+        <input id="registerPassword" placeholder="Senha" type="password" required />
+        <i class="bx bxs-lock-alt"></i>
+        <!-- Ícone de visualização -->
+        <i class="bx bx-show toggle-password" id="togglePassword" style="right: 45px;"></i>
+      </div>
+
+      <button type="submit" class="register">Criar Conta</button> 
+    </form>
+  </main>
+
+  <!-- Firebase SDKs + script para alternar senha -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBVYP7OCbu7GcxSXDWO7VcHas5pa8GYvgk",
+      authDomain: "turma-show.firebaseapp.com",
+      projectId: "turma-show",
+      storageBucket: "turma-show.firebasestorage.app",
+      messagingSenderId: "557313701532",
+      appId: "1:557313701532:web:4da2eb9984b0993d6cdf59"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const form = document.getElementById("registerForm");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("registerEmail").value;
+      const password = document.getElementById("registerPassword").value;
+
+      try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+        await sendEmailVerification(user);
+
+        alert("Cadastro realizado com sucesso! Um e-mail de verificação foi enviado.");
+        window.location.href = "index.html";
+      } catch (error) {
+        alert("Erro no cadastro: " + error.message);
+      }
+    });
+
+    // Alternar visualização da senha
+    const toggle = document.getElementById("togglePassword");
+    const passwordInput = document.getElementById("registerPassword");
+
+    toggle.addEventListener("click", () => {
+      const type = passwordInput.type === "password" ? "text" : "password";
+      passwordInput.type = type;
+      toggle.classList.toggle("bx-show");
+      toggle.classList.toggle("bx-hide");
+    });
+  </script>
+</body>
+</html>

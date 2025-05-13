@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrinho</title>
+    <link rel="stylesheet" href="carrinho.css" />
+    <!-- Biblioteca QRCode.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script defer src="carrinho.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="logo" href="/">Turma Show // Carrinho</a>
+        <!-- Adicionando o menu hambúrguer para dispositivos móveis -->
+        <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="projeto.html">Projetos sociais</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+          <li><a href="loja.html">Loja</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="conteudo">
+        <div class="caixa">
+          <h2>Seu Carrinho</h2>
+          <div id="itens-carrinho"></div>
+          
+          <!-- Botões de Ação -->
+          <button id="finalizar">Finalizar Compra</button>
+          <button id="voltar">Voltar</button>
+
+          <!-- Div do QR Code (inicialmente oculta) -->
+          <div id="qrcode" style="display: none; margin-top: 20px;"></div>
+
+          <!-- Código PIX e botão de cópia -->
+          <div id="codigo-pix" style="display: none; margin-top: 10px; word-break: break-word;"></div>
+          <button id="copiarPix" style="display: none; margin-top: 10px;">Copiar código PIX</button>
+        </div>
+      </div>
+      </main>
+      <footer>
+      <p>&copy; 2025 Turma Show. Todos os direitos reservados.</p>
+    </footer>
+  </body>
+</html>

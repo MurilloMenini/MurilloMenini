@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Turma Show.Login</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="container">
+    <form id="loginForm">
+      <h1>Login</h1>
+      <div class="inputbox">
+        <input id="loginEmail" placeholder="Usuário" type="email" required />
+        <i class="bx bxs-user"></i>
+      </div>
+      <div class="inputbox">
+        <input id="loginPassword" placeholder="Senha" type="password" required />
+        <i class="bx bxs-lock-alt"></i>
+      </div>
+      <div class="remember">
+        <label>
+          <input type="checkbox" />
+          Lembrar senha
+        </label>
+        <a href="esqueci.html">Esqueci a senha</a>
+      </div>
+      <button type="submit" class="login">Login</button>
+      <div class="register">
+        <p>Não tem conta? <a href="register.html">Registrar-se</a></p>
+      </div>
+    </form>
+  </main>
+
+  <!-- Firebase SDKs -->
+  <script type="module">
+    // Importações dos módulos Firebase
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js";
+
+    // Configuração do seu projeto
+    const firebaseConfig = {
+      apiKey: "AIzaSyBVYP7OCbu7GcxSXDWO7VcHas5pa8GYvgk",
+      authDomain: "turma-show.firebaseapp.com",
+      projectId: "turma-show",
+      storageBucket: "turma-show.firebasestorage.app",
+      messagingSenderId: "557313701532",
+      appId: "1:557313701532:web:4da2eb9984b0993d6cdf59"
+    };
+
+    // Inicializa o Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // Lógica de login
+    const form = document.getElementById("loginForm");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
+
+      try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+
+        // Verifica se o e-mail foi verificado
+        if (!user.emailVerified) {
+          alert("Por favor, verifique seu e-mail antes de fazer login.");
+          return;
+        }
+        alert("Login feito com sucesso!");
+        window.location.href = "home.html"; // Redireciona para a página principal
+      } catch (error) {
+        alert("Erro no login: " + error.message);
+      }
+    });
+  </script>
+</body>
+
+</html>

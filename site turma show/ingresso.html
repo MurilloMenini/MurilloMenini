@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Turma Show // Ingressos</title>
+    <link rel="stylesheet" href="ingresso.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="logo" href="/">Turma Show // Ingressos</a>
+        <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="projeto.html">Projetos sociais</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+          <li><a href="loja.html">Loja</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="conteudo">
+        <div class="caixa">
+          <h2>COMPRE SEU INGRESSO AQUI!!!</h2>
+        </div>
+      </div>
+
+      <div class="caixa-compras">
+        <h2>Menu de Compras</h2>
+        <div class="menu-container">
+          <div class="produto">
+            <img src="img/carnaval.avif" alt="Produto 1">
+            <h3>CarnaShow</h3>
+            <p>R$ 89,90</p>
+            <label for="qtd-carna">Qtd:</label>
+            <input type="number" id="qtd-carna" min="1" value="1" class="quantidade">
+            <button onclick="comprar('CarnaShow', 89.90, 'qtd-carna')">Comprar</button>
+          </div>
+
+          <div class="produto">
+            <img src="img/festadolove2.jpg" alt="Produto 2">
+            <h3>Fest loveShow</h3>
+            <p>R$ 89,90</p>
+            <label for="qtd-love">Qtd:</label>
+            <input type="number" id="qtd-love" min="1" value="1" class="quantidade">
+            <button onclick="comprar('Fest loveShow', 89.90, 'qtd-love')">Comprar</button>
+          </div>
+
+          <div class="produto">
+            <img src="img/festadepreto.jfif" alt="Produto 3">
+            <h3>Black Party</h3>
+            <p>R$ 89,90</p>
+            <label for="qtd-black">Qtd:</label>
+            <input type="number" id="qtd-black" min="1" value="1" class="quantidade">
+            <button onclick="comprar('Black Party', 89.90, 'qtd-black')">Comprar</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+  function comprar(nome, preco, inputId) {
+    const quantidade = parseInt(document.getElementById(inputId).value);
+    if (!quantidade || quantidade < 1) {
+      alert("Por favor, insira uma quantidade válida.");
+      return;
+    }
+
+    // Define imagem com base no nome do produto
+    let imagem = "";
+    if (nome === "CarnaShow") {
+      imagem = "img/carnaval.avif";
+    } else if (nome === "Fest loveShow") {
+      imagem = "img/festadolove2.jpg";
+    } else if (nome === "Black Party") {
+      imagem = "img/festadepreto.jfif";
+    }
+
+    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+    const itemExistente = carrinho.find(item => item.nome === nome);
+    if (itemExistente) {
+      itemExistente.quantidade += quantidade;
+    } else {
+      carrinho.push({ nome, preco, quantidade, imagem });
+    }
+
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+    window.location.href = "carrinho.html";
+  }
+</script>
+
+    <footer>
+      <p>&copy; 2025 Turma Show. Todos os direitos reservados.</p>
+    </footer>
+  </body>
+</html>

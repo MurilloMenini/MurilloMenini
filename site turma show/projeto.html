@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Turma Show</title>
+  <link rel="stylesheet" href="projeto.css" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a class="logo" href="/">Turma Show //Projetos Socias</a>
+      <div class="mobile-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+      <ul class="nav-list">
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="ingresso.html">ingressos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="loja.html">Loja</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="conteudo">
+      <div class="caixa">
+        <h2>Ajude a Fazer a Diferença: Doe Agora!</h2>
+        <p>Em um mundo onde cada gesto de solidariedade pode criar uma onda de mudança, sua ajuda se torna a força que
+          transforma vidas. Vivemos tempos desafiadores, e em meio às dificuldades, a união de cada pessoa é
+          fundamental. Estamos arrecadando doações para apoiar aqueles que mais precisam — desde famílias em situações
+          de vulnerabilidade até comunidades afetadas por crises.
+          Sua contribuição, por menor que pareça, tem o poder de proporcionar um novo começo, reacender a esperança e
+          criar um futuro melhor para aqueles que estão lutando para sobreviver. Acredite: com seu apoio, podemos
+          oferecer mais do que recursos materiais — podemos oferecer dignidade, oportunidades e a certeza de que ninguém
+          está sozinho em sua jornada.
+          Junte-se a nós nessa missão e seja o farol de luz na vida de quem precisa. Cada ato de generosidade gera uma
+          transformação, e juntos, podemos construir um mundo mais justo e solidário. Sua doação é mais do que um
+          simples gesto — é um investimento no bem-estar coletivo e no futuro de todos.
+        </p>
+      </div>
+      <div class="turma">
+        <h1></h1>
+        <p>Projetos Sociais da Turma Show</p>
+      </div>
+    </div>
+  <a href="https://www.exemplo.com" target="_blank">
+  <button class="doar-agora">Doe Agora!!!</button>
+</a>
+     <div class="caixa-compras">
+  <h2>Nossas doações</h2>
+  <div class="menu-container">
+    <div class="produto">
+      <img src="img/projetosocial4.jfif" alt="Produto 1">
+      <p>Doação de cestas basicas</p>
+    </div>
+    <div class="produto">
+      <img src="img/projetosocial2.png" alt="Produto 2">
+     <p>Projeto Pascoa</p>
+    </div>
+    <div class="produto">
+      <img src="img/projetosocial.png" alt="Produto 3">
+      <p>Tarde com as crianças</p>
+      </div>
+  </div>
+</div>
+  <div class="caixa-compras2">
+  <div class="menu-container2">
+    <div class="produto">
+      <img src="img/doaçao 1.webp" alt="Produto 1">
+      <p>Doação para familias carentes</p>
+    </div>
+    <div class="produto">
+      <img src="img/projetobrinquedo.webp" alt="Produto 2">
+     <p>Doação de brinquedos</p>
+    </div>
+    <div class="produto">
+      <img src="img/projetonatal.jpeg" alt="Produto 3">
+      <p>Projeto Natal</p>
+      </div>
+  </div>
+</div>
+<div class="logo2">
+  <img src="img/ChatGPT Image 9 de mai. de 2025, 02_56_46.png" alt="">
+</div>
+  </main>
+  <script src="mobile-navbar.js"></script>
+  <script>
+    let lastScrollTop = 0;
+    const nav = document.querySelector("nav");
+
+    window.addEventListener("scroll", function () {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+      if (scrollTop > lastScrollTop) {
+        // Rolando para baixo
+        nav.classList.add("hidden");
+      } else {
+        // Rolando para cima
+        nav.classList.remove("hidden");
+      }
+
+      lastScrollTop = scrollTop;
+    });
+  </script>
+  <footer>
+    <p>&copy; 2025 Turma Show. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #000000 url('img/fundo25.png') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 0 30px #ffffff;
+  width: 300px;
+  text-align: center;
+  height: 230px;
+}
+
+h1 {
+  color: #ffffff;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #ffffff;
+}
+
+form input {
+  width: 100%;
+  padding: 5px;
+  height: 20px;
+  margin: 10px 0;
+  background: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  outline: none;
+  box-shadow: 0 0 10px #ffffff inset;
+}
+
+form button {
+  width: 100%;
+  padding: 12px;
+  background: rgb(255, 255, 255);
+  border: none;
+  border-radius: 20px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+  box-shadow: 0 0 15px #ffffff;
+  background-color: transparent;
+  font-size: 15px;
+  height: 50px;
+
+}
+
+form button:hover {
+  background: transparent;
+  box-shadow: 0 0 25px #ffffff;
+  color: white;
+   display: block;
+  margin-top: 20px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+  transition: 0.2s;
+}
+
+#mensagem {
+  margin-top: 15px;
+  color: #ffffff;
+  font-size: 14px;
+  text-shadow: 0 0 5px #ffffff;
+  
+}
+
+.voltar {
+  display: block;
+  margin-top: 40px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.voltar:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+}

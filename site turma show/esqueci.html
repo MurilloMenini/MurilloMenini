@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Redefinir Senha</title>
+  <link rel="stylesheet" href="esqueci.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Redefinir Senha</h1>
+    <form id="resetForm">
+      <input type="email" id="email" placeholder="Seu e-mail" required />
+      <button type="submit">Enviar link</button>
+    </form>
+    <p id="mensagem"></p>
+    <a href="index.html" class="voltar">← Voltar ao login</a>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAuth, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBVYP7OCbu7GcxSXDWO7VcHas5pa8GYvgk",
+      authDomain: "SEU_PROJETO.firebaseapp.com",
+      projectId: "SEU_PROJETO",
+      storageBucket: "SEU_PROJETO.appspot.com",
+      messagingSenderId: "SEU_ID",
+      appId: "SEU_APP_ID"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const form = document.getElementById("resetForm");
+    const mensagem = document.getElementById("mensagem");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+
+      sendPasswordResetEmail(auth, email)
+        .then(() => {
+          mensagem.textContent = "Link enviado! Verifique seu e-mail.";
+        })
+        .catch((error) => {
+          mensagem.textContent = "Erro: " + error.message;
+        });
+    });
+  </script>
+</body>
+</html>
