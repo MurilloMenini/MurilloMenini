@@ -1,0 +1,94 @@
+body {
+  height: 100vh;
+  background: radial-gradient(circle at center, #ff0000, #2b1a41);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.login-caixa {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 40px;
+  border-radius: 10px;
+  width: 360px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin: 15px 0 5px;
+  font-size: 14px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  background-color: #222;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+
+.btn-capa {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  margin-top: 30px;
+}
+
+.cobra-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  color: #d80000; 
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  z-index: 2;
+  cursor: pointer;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0;
+}
+
+.btn-borda {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.btn-borda rect {
+  fill: none;
+  stroke: #ff0000; 
+  stroke-width: 2;
+  stroke-dasharray: 0.15 0.85; 
+  stroke-dashoffset: 0;
+  animation: move-snake 1s linear infinite; 
+  filter: drop-shadow(0 0 10px #ff5304) drop-shadow(0 0 20px #ff1100); 
+}
+
+@keyframes move-snake {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -1;
+  }
+}
