@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: #000000;
+    background: linear-gradient(to bottom, #838282, #d1d1d1);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+header {
+  background: #000000;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  margin: 10px 15px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #D4AF37;
+  text-transform: uppercase;
+}
+
+.section {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.projetos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.projeto,
+.projeto2 {
+ background-color: #ffffff;
+  padding: 20px;
+  border-left: 5px solid #000000;
+  box-shadow: 0 0px 5px black;
+  color: rgb(0, 0, 0);
+  flex: 1 1 300px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.projeto img,
+.projeto2 img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  box-shadow: 0 0 5px black;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000000;
+  color: #fff;
+}
+
+.Minhafoto {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.Minhafoto img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 2px solid black;
+  box-shadow: 0px 0px 15px #ffffff;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.imglogo {
+  color: #000000;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.exp,
+.contato {
+  background-color: #ffffff;
+  color: #000000;
+  box-shadow: 0 0 5px black;
+  border-left: 5px solid #000000;
+  padding: 25px;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.exp li {
+  list-style: none;
+}
+
+.contato a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.contato a:hover {
+
+  color: #00ff0d;
+  color: rgb(0, 0, 0);
+}
+
+.contato p {
+  color: #000000;
+}
+
+.botao-whatsapp {
+  display: inline-block;
+  background-color: #ffffff;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.botao-whatsapp:hover {
+  background-color: #1eff00;
+  box-shadow: 0 0 5px black;
+}
+
+.botao-whatsapp i {
+  margin-right: 8px;
+}
+
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Minhafoto img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .imglogo {
+    font-size: 1.5rem;
+  }
+
+  .section {
+    padding: 40px 15px;
+  }
+
+  h1, h2, p {
+    font-size: 1rem;
+  }
+
+  .botao-whatsapp {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+}
